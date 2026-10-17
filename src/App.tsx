@@ -1,16 +1,18 @@
+import './App.css'
+
 type Status = 'Applied' | 'Interview' | 'Offer' | 'Rejected'
 
 type Application = {
   id: number
   company: string
   role: string
-  status: string
+  status: Status
 }
 
 const sampleApplications: Application[] =[
-  { id: 1, company: 'Grab', role: 'Junior Frontend Developer', status: 'Applied' },
-  { id: 2, company: 'Shopee', role: 'Graduate Software Engineer', status: 'Interview' },
-  { id: 3, company: 'Petronas Digital', role: 'Junior Web Developer', status: 'Rejected' }
+  { id: 1, company: 'Grab', role: 'Junior Frontend Developer', status: 'Applied'},
+  { id: 2, company: 'Shopee', role: 'Graduate Software Engineer', status: 'Interview'},
+  { id: 3, company: 'Petronas', role: 'Junior Web Developer', status: 'Rejected'}
 ]
 
 function App() {
@@ -26,7 +28,7 @@ function App() {
               <h2>{app.company}</h2>
               <p>{app.role}</p>
             </div>
-            <span className={'badge badge-${app.status.toLowerCase()}'}>
+            <span className={`badge badge-${app.status.toLowerCase()}`}>
               {app.status}
             </span>
           </li>
